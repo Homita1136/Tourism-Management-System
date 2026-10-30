@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | Explore India</title>
+    <link rel="stylesheet" type="text/css" href="feedback.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="main">
+        <div class="nav-top">
+
+            <a href="mainPage.html" class="logo">
+                <img src="earth-globe.png" alt="Logo">
+                <span>Explore India</span>
+            </a>
+
+            <div class="search">
+                <form method="POST" action="info.php">
+                    <input type="text" name="search_p" placeholder="Search destinations...">
+                    <input type="image" name="submit_p" src="search_icon.png" alt="Search">
+                </form>
+            </div>
+
+        </div>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="mainPage.html">Home</a></li>
+                <li><a id="long" href="destination.html">Destination</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li class="active-menu"><a href="feedback.html">Feedback</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Feedback Form -->
+    <main class="feedback-section">
+
+        <div class="feedback">
+            <div class="feedback-heading">
+                <h1>Share Your Feedback</h1>
+                <p>We would love to hear about your experience with Explore India.</p>
+            </div>
+
+            <form name="feedbackForm" method="POST" action="feedback.php">
+
+                <div class="form-group">
+                    <label for="inputText">Your Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        id="inputText"
+                        placeholder="Enter your name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail">Your Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        id="inputEmail"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+                <div class="form-group text1">
+                    <label for="feedbackText">Feedback</label>
+                    <textarea
+                        class="inputTextarea"
+                        name="feedbk"
+                        id="feedbackText"
+                        rows="4"
+                        placeholder="Please write your feedback here..."
+                        required></textarea>
+                </div>
+
+                <div class="wrapper">
+                    <button type="submit" class="btn btn-primary" name="submit">
+                        Submit Feedback
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+
+</body>
+</html>

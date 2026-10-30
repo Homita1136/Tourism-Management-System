@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Explore India</title>
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
+</head>
+
+<body>
+
+    <main class="signup-container">
+
+        <div class="login-box">
+
+            <div class="login-logo">
+                <img src="earth-globe.png" alt="Explore India Logo">
+                <h2>Explore India</h2>
+            </div>
+
+            <h1>Create Account</h1>
+            <p class="subtitle">Join us and start exploring India.</p>
+
+            <form name="myForm" action="save.php" method="POST">
+
+                <div class="textbox">
+                    <label for="fname">Username</label>
+                    <input
+                        type="text"
+                        placeholder="Enter your username"
+                        id="fname"
+                        name="fname"
+                        value=""
+                        required>
+                </div>
+
+                <div class="textbox">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        placeholder="Enter your password"
+                        id="password"
+                        name="password"
+                        value=""
+                        maxlength="8"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Password must contain at least one number, one uppercase letter, one lowercase letter and 8 characters"
+                        required>
+                </div>
+
+                <div class="textbox">
+                    <label for="email">Email</label>
+                    <input
+                        type="text"
+                        placeholder="Enter your email"
+                        id="email"
+                        name="email"
+                        value=""
+                        required
+                        pattern="[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+.[a-z]{2,4}"
+                        title="Invalid Email">
+                </div>
+
+                <div class="textbox">
+                    <label for="city">City</label>
+                    <input
+                        type="text"
+                        placeholder="Enter your city"
+                        id="city"
+                        name="city"
+                        value=""
+                        required>
+                </div>
+
+                <div class="textbox">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="text"
+                        placeholder="Enter your 10-digit phone number"
+                        id="phone"
+                        name="phone"
+                        value=""
+                        required
+                        onkeypress="return /[0-9]/i.test(event.key)"
+                        maxlength="10"
+                        pattern="([0-9]){10,}">
+                </div>
+
+                <input class="btn" type="submit" name="" value="Create Account">
+
+                <div class="signup-link">
+                    <p>Already have an account?</p>
+                    <a href="index.html">Sign in here</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

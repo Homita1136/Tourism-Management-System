@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Booking | Explore India</title>
+    <link rel="stylesheet" type="text/css" href="css/booking.css">
+
+    <script>
+        function validateForm() {
+
+            if (isEmpty(document.forms["form"]["ffirst"].value)) {
+                alert("First name is required!");
+                return false;
+            }
+
+            if (isEmpty(document.forms["form"]["flast"].value)) {
+                alert("Last name is required!");
+                return false;
+            }
+
+            if (!validateEmail(document.forms["form"]["femail"].value.trim())) {
+                alert("Please enter a valid email address!");
+                return false;
+            }
+
+            return true;
+        }
+
+        function isEmpty(str) {
+            return str.trim().length === 0;
+        }
+
+        function validateEmail(email) {
+            var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+            return re.test(email);
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="main">
+
+        <ul class="list">
+            <li class="logo">
+                <a href="mainPage.html">
+                    <img src="earth-globe.png" alt="Explore India Logo">
+                </a>
+            </li>
+
+            <li class="search">
+                <form method="POST" action="info.php">
+                    <input type="text" name="search_p" placeholder="Search destinations...">
+                    <input type="image" name="submit_p" src="search_icon.png" alt="Search">
+                </form>
+            </li>
+        </ul>
+
+        <ul class="list2">
+            <li><a href="mainPage.html">Home</a></li>
+            <li><a href="destination.html">Destination</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Booking Section -->
+    <main class="booking-section">
+
+        <div class="booking-heading">
+            <h1>Book Your Tour</h1>
+            <p>Fill in your details to submit your tour booking request.</p>
+        </div>
+
+        <div class="container">
+
+            <form method="POST" action="booking.php" name="form" onsubmit="return validateForm()">
+
+                <div class="textbox">
+                    <label for="ffirst">First Name</label>
+                    <input type="text" id="ffirst" placeholder="Enter your first name"
+                        name="ffirst" value=""
+                        onkeypress="return /[a-zA-Z]/i.test(event.key)" required>
+                </div>
+
+                <div class="textbox">
+                    <label for="flast">Last Name</label>
+                    <input type="text" id="flast" placeholder="Enter your last name"
+                        name="flast" value=""
+                        onkeypress="return /[a-zA-Z]/i.test(event.key)" required>
+                </div>
+
+                <div class="textbox">
+                    <label for="femail">Email Address</label>
+                    <input type="text" id="femail" placeholder="Enter your email"
+                        name="femail" value="" required
+                        pattern="[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(\.[a-z]{2,})+"
+                        title="Please enter a valid email address">
+                </div>
+
+                <div class="textbox">
+                    <label for="city">City</label>
+                    <input type="text" id="city" placeholder="Enter your city"
+                        name="city" value=""
+                        onkeypress="return /[a-zA-Z ]/i.test(event.key)" required>
+                </div>
+
+                <div class="textbox">
+                    <label for="fphone">Phone Number</label>
+                    <input type="text" id="fphone" placeholder="Enter your 10-digit phone number"
+                        name="fphone" value=""
+                        onkeypress="return /[0-9]/i.test(event.key)"
+                        maxlength="10" pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="textbox">
+                    <label for="fdesti">Destination</label>
+                    <input type="text" id="fdesti" placeholder="Enter your destination"
+                        name="fdesti" value="" required>
+                </div>
+
+                <div class="btn">
+                    <input name="submit" value="Submit Booking Request" type="submit">
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

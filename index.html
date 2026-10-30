@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Explore India</title>
+    <link rel="stylesheet" type="text/css" href="css/signin.css">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <div class="login-box">
+
+            <div class="login-logo">
+                <img src="earth-globe.png" alt="Explore India Logo">
+                <h2>Explore India</h2>
+            </div>
+
+            <h1>Welcome Back!</h1>
+            <p class="subtitle">Sign in to continue your journey.</p>
+
+            <form name="myForm" action="signin.php" method="POST">
+
+                <div class="textbox">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        name="user"
+                        value=""
+                        required>
+                </div>
+
+                <div class="textbox">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        name="pass"
+                        value=""
+                        maxlength="8"
+                        required>
+                </div>
+
+                <input class="btn" type="submit" name="submit" value="Sign In">
+
+                <div class="signup-link">
+                    <p>Don't have an account?</p>
+                    <a href="signup.html">Create an account</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

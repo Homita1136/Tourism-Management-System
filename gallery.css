@@ -1,0 +1,265 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #222;
+}
+
+/* Navigation Bar */
+.main {
+    width: 100%;
+    background-color: #172b3a;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.nav-top {
+    min-height: 75px;
+    padding: 12px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+/* Search */
+.search form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search input[type="text"] {
+    width: 280px;
+    padding: 11px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+}
+
+.search input[type="text"]:focus {
+    border-color: #e8a23a;
+}
+
+.search input[type="image"] {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+}
+
+/* Navigation Links */
+.navigation {
+    background-color: #203b4e;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 17px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation ul li a:hover,
+.navigation ul li.active-menu a {
+    background-color: #e8a23a;
+    color: #172b3a;
+}
+
+/* Gallery Heading */
+.gallery-heading {
+    text-align: center;
+    padding: 55px 20px 35px;
+}
+
+.gallery-heading h1 {
+    color: #172b3a;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.gallery-heading p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Gallery Sections */
+.gallery {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.container {
+    margin-bottom: 45px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.container h2 {
+    color: #203b4e;
+    font-size: 25px;
+    margin-bottom: 22px;
+    padding-left: 12px;
+    border-left: 4px solid #e8a23a;
+}
+
+/* Image Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.box {
+    overflow: hidden;
+    border-radius: 9px;
+    background-color: #eee;
+}
+
+.imgBox {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+}
+
+.imgBox img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.box:hover img {
+    transform: scale(1.07);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .nav-top {
+        padding: 12px 4%;
+    }
+
+    .search input[type="text"] {
+        width: 220px;
+    }
+
+    .navigation ul li a {
+        padding: 15px 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .nav-top {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 15px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search form {
+        justify-content: center;
+    }
+
+    .search input[type="text"] {
+        width: min(75%, 280px);
+    }
+
+    .navigation ul {
+        flex-wrap: wrap;
+    }
+
+    .navigation ul li a {
+        padding: 12px 13px;
+        font-size: 13px;
+    }
+
+    .gallery-heading {
+        padding: 38px 15px 25px;
+    }
+
+    .gallery-heading h1 {
+        font-size: 28px;
+    }
+
+    .gallery-heading p {
+        font-size: 14px;
+    }
+
+    .gallery {
+        width: 94%;
+    }
+
+    .container {
+        padding: 16px;
+        margin-bottom: 25px;
+    }
+
+    .container h2 {
+        font-size: 22px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .imgBox {
+        height: 150px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .imgBox {
+        height: 200px;
+    }
+}

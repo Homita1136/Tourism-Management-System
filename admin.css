@@ -1,0 +1,542 @@
+
+/* =====================================
+   GENERAL STYLING
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fa;
+    color: #263445;
+    min-height: 100vh;
+}
+
+/* =====================================
+   TOP NAVIGATION BAR
+===================================== */
+
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: #172b3a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main .list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main .list li {
+    display: inline-block;
+}
+
+.main .list li.logo img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.main .list li.logo img:hover {
+    transform: rotate(15deg);
+}
+
+/* Search */
+
+.search form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search input[type="text"] {
+    width: 260px;
+    padding: 9px 14px;
+    border: 1px solid #d5dce5;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.search input[type="text"]:focus {
+    border-color: #e8a23a;
+    box-shadow: 0 0 0 3px rgba(232, 162, 58, 0.15);
+}
+
+.main .list input[type="image"] {
+    width: 25px;
+    height: 25px;
+    padding: 4px;
+    background: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Logout */
+
+.main .list2 {
+    display: flex;
+    align-items: center;
+}
+
+.main .list2 li {
+    display: inline-block;
+}
+
+.main .list2 li a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 9px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.main .list2 li a:hover {
+    background: #e8a23a;
+    border-color: #e8a23a;
+    color: #172b3a;
+}
+
+/* =====================================
+   MAIN ADMIN CONTAINER
+===================================== */
+
+.container {
+    width: calc(100% - 50px);
+    max-width: 1500px;
+    min-height: 650px;
+    margin: 90px auto 30px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(30, 50, 70, 0.08);
+
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+}
+
+/* =====================================
+   ADMIN HEADER
+===================================== */
+
+.container .headder {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 85px;
+    background: #172b3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container .headder h1 {
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    padding: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* =====================================
+   SIDEBAR MENU
+===================================== */
+
+.container .menu-list {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    min-height: 565px;
+    background: #edf2f7;
+    padding: 25px 15px;
+    border-right: 1px solid #dce3eb;
+}
+
+.container .menu-list a {
+    display: block;
+    text-decoration: none;
+    background: transparent;
+    color: #34465a;
+    text-align: left;
+    padding: 14px 15px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.container .menu-list a:hover {
+    background: #172b3a;
+    color: white;
+    border-color: #172b3a;
+    padding-left: 20px;
+}
+
+/* =====================================
+   WORKSPACE AREAS
+===================================== */
+
+.container .customer-workspace,
+.container .agent-workspace,
+.container .places-workspace,
+.container .hotels-workspace,
+.container .addp-workspace {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100% !important;
+    min-width: 0;
+    min-height: 565px;
+    height: auto !important;
+    float: none;
+    padding: 35px 30px;
+    background: white;
+}
+
+/* Existing hidden sections */
+
+.container #id1,
+.container #id2,
+.container #id3,
+.container #id4 {
+    display: none;
+}
+
+/* =====================================
+   ACTION BUTTONS
+===================================== */
+
+.container .btn-tag {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 180px;
+}
+
+.container .btn-tag button {
+    display: inline-block;
+    padding: 13px 22px;
+    background: #172b3a;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.container .btn-tag button:hover {
+    background: #e8a23a;
+    color: #172b3a;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   FORMS
+===================================== */
+
+.container .insert-form,
+.container .delete-form,
+.container .insert-pform {
+    width: 100% !important;
+    max-width: 420px;
+    height: auto !important;
+    margin: 35px auto !important;
+    padding: 25px;
+    background: #f5f7fa;
+    border: 1px solid #e0e6ed;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(30, 50, 70, 0.06);
+}
+
+/* Initially hidden forms */
+
+.container .insert-form,
+.container .delete-form,
+.container .insert-pform {
+    display: none;
+}
+
+/* Form Inputs */
+
+.container .insert-form input:not([type="submit"]),
+.container .delete-form input:not([type="submit"]),
+.container .insert-pform input:not([type="submit"]),
+.container .insert-pform textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    margin: 12px 0;
+    border: 1px solid #ccd5df;
+    border-radius: 6px;
+    background: white;
+    color: #263445;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.container .insert-form input:focus,
+.container .delete-form input:focus,
+.container .insert-pform input:focus,
+.container .insert-pform textarea:focus {
+    border-color: #e8a23a;
+    box-shadow: 0 0 0 3px rgba(232, 162, 58, 0.12);
+}
+
+.container .insert-pform textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Submit Buttons */
+
+.container input.submit,
+.container input[type="submit"] {
+    min-width: 120px;
+    padding: 11px 22px;
+    margin: 12px 5px;
+    background: #172b3a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.container input.submit:hover,
+.container input[type="submit"]:hover {
+    background: #e8a23a;
+    color: #172b3a;
+}
+
+/* =====================================
+   DATA TABLES
+===================================== */
+
+.container #tb-container,
+.container #agent-container,
+.container #place-container,
+.container #hotel-container {
+    width: 100%;
+    margin-top: 25px !important;
+    overflow-x: auto;
+}
+
+.container table {
+    width: 100% !important;
+    min-width: 500px;
+    border-collapse: collapse;
+    background: white;
+    text-align: left;
+    border: 1px solid #dce3eb;
+}
+
+.container table th,
+.container table td {
+    padding: 13px 15px;
+    border: 1px solid #e0e6ed;
+    font-size: 14px;
+}
+
+.container table th {
+    background: #172b3a;
+    color: white;
+    font-weight: 600;
+}
+
+.container table th h2 {
+    font-size: 18px;
+    padding: 5px;
+}
+
+.container table tr:nth-child(even) {
+    background: #f3f6fa;
+}
+
+.container table tr:hover {
+    background: #fff4df;
+}
+
+/* =====================================
+   ADD PLACE INFORMATION
+===================================== */
+
+.container .addp-workspace {
+    padding: 35px 30px;
+}
+
+.container .addp-workspace .insert-pform {
+    max-width: 520px;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 900px) {
+
+    .container {
+        grid-template-columns: 200px minmax(0, 1fr);
+        width: calc(100% - 30px);
+    }
+
+    .container .menu-list {
+        padding: 20px 10px;
+    }
+
+    .container .menu-list a {
+        font-size: 13px;
+        padding: 12px 10px;
+    }
+
+    .container .customer-workspace,
+    .container .agent-workspace,
+    .container .places-workspace,
+    .container .hotels-workspace,
+    .container .addp-workspace {
+        padding: 25px 18px;
+    }
+
+    .container .btn-tag {
+        padding-top: 130px;
+    }
+
+    .search input[type="text"] {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .main {
+        height: auto;
+        min-height: 65px;
+        padding: 10px 15px;
+    }
+
+    .main .list {
+        gap: 10px;
+    }
+
+    .search input[type="text"] {
+        width: 130px;
+        font-size: 12px;
+    }
+
+    .main .list2 li a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .container {
+        display: block;
+        width: calc(100% - 20px);
+        margin: 85px auto 20px;
+    }
+
+    .container .headder {
+        min-height: 70px;
+    }
+
+    .container .headder h1 {
+        font-size: 22px;
+    }
+
+    .container .menu-list {
+        width: 100%;
+        min-height: auto;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #dce3eb;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .container .menu-list a {
+        margin: 0;
+        text-align: center;
+        font-size: 12px;
+        padding: 12px 6px;
+    }
+
+    .container .customer-workspace,
+    .container .agent-workspace,
+    .container .places-workspace,
+    .container .hotels-workspace,
+    .container .addp-workspace {
+        min-height: 400px;
+        padding: 20px 12px;
+    }
+
+    .container .btn-tag {
+        padding-top: 100px;
+        flex-direction: column;
+    }
+
+    .container .btn-tag button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .container .insert-form,
+    .container .delete-form,
+    .container .insert-pform {
+        padding: 18px;
+    }
+
+    .container table th,
+    .container table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .search input[type="text"] {
+        width: 100px;
+    }
+
+    .container .menu-list {
+        grid-template-columns: 1fr;
+    }
+}
